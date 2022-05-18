@@ -36,7 +36,7 @@ class MyGame(arcade.Window):
 
         #звук собирания звезд
         self.coin_list = None
-        self.collect_coin_sound = arcade.load_sound("E:\УНИК\программирование\игра\zvezda.wav")
+        self.collect_coin_sound = arcade.load_sound("zvezda.wav")
         arcade.set_background_color(arcade.color.COOL_BLACK)
 
         self.score = 0
@@ -48,7 +48,7 @@ class MyGame(arcade.Window):
         self.scene = arcade.Scene()
         self.score = 0
 
-        image_source = "спрайты\перс-стоит.png"
+        image_source = "перс-стоит.png"
         self.coin_list = arcade.SpriteList(use_spatial_hash=True)
 
         self.player_sprite = arcade.Sprite(image_source)
@@ -56,16 +56,16 @@ class MyGame(arcade.Window):
 
         #стоит право
         self.player_sprite.stand_right_textures = []
-        self.player_sprite.stand_right_textures.append(arcade.load_texture("ИГРА2\перс-стоит.png"))
+        self.player_sprite.stand_right_textures.append(arcade.load_texture("перс-стоит.png"))
         #стоит лево
         self.player_sprite.stand_left_textures = []
-        self.player_sprite.stand_left_textures.append(arcade.load_texture("ИГРА2\перс-стоит.png"))
+        self.player_sprite.stand_left_textures.append(arcade.load_texture("перс-стоит.png"))
         #идёт право
         self.player_sprite.walk_right_textures = []
-        self.player_sprite.walk_right_textures.append(arcade.load_texture("ИГРА2\перс-идет.png"))
+        self.player_sprite.walk_right_textures.append(arcade.load_texture("перс-идет.png"))
         #идёт лево
         self.player_sprite.walk_left_textures = []
-        self.player_sprite.walk_left_textures.append(arcade.load_texture("ИГРА2\перс-идет2.png"))
+        self.player_sprite.walk_left_textures.append(arcade.load_texture("перс-идет2.png"))
 
 
         self.player_sprite.center_x = 300
@@ -74,20 +74,20 @@ class MyGame(arcade.Window):
 
     # пол, по которому бегает персонаж
         for x in range(0, 9900, 900):
-            wall = arcade.Sprite("ИГРА2\пол.png")
+            wall = arcade.Sprite("пол.png")
             wall.center_x = x
             wall.center_y = -200
             self.scene.add_sprite("Walls", wall)
     # добавляю пеньки
         coordinate_list = [[1900, 350], [2900, 350], [3800, 350], [5300, 350], [7100, 350], [9900, 350]]
         for coordinate in coordinate_list:
-            wall = arcade.Sprite("ИГРА2\пень.png")
+            wall = arcade.Sprite("пень.png")
             wall.position = coordinate
             self.scene.add_sprite("Walls", wall)
 
     # добавляю звезды, которые будет собирать персонаж
         for x in range(600, 10000, 900):
-            coin = arcade.Sprite("ИГРА2\звезда.png")
+            coin = arcade.Sprite("звезда.png")
             coin.center_x = x
             coin.center_y = 350
             self.coin_list.append(coin)
