@@ -20,7 +20,7 @@ TOP_VIEWPORT_MARGIN = 100
 class MyGame(arcade.Window):
 
     def __init__(self):
-        #конструктора для инициализации атрибутов класса
+        #конструкторы для инициализации атрибутов класса
 
         super().__init__(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_TITLE)
 
